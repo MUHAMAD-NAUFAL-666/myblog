@@ -69,10 +69,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+        >
+          {themeInitScript}
+        </Script>
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

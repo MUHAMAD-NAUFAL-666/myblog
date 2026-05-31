@@ -5,26 +5,26 @@ import { Container } from "@/app/components/container";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Naufal is a senior frontend engineer with a decade of experience leading design systems and building durable interfaces.",
+    "Naufal is a senior frontend Developer with a decade of experience leading design systems and building durable interfaces.",
 };
 
 const experience = [
   {
-    role: "Principal Frontend Engineer",
+    role: "Principal Frontend Developer",
     company: "Lumen Studio",
     period: "2022 — Present",
     summary:
       "Lead the design system and platform UI guild. Cut TTI 38% across the flagship app and shepherded the migration to React Server Components.",
   },
   {
-    role: "Senior Frontend Engineer",
+    role: "Senior Frontend Developer",
     company: "Northwind",
     period: "2019 — 2022",
     summary:
-      "Owned the component library used by 80+ engineers. Wrote the accessibility playbook still in use today.",
+      "Owned the component library used by 80+ Developer. Wrote the accessibility playbook still in use today.",
   },
   {
-    role: "Frontend Engineer",
+    role: "Frontend Developer",
     company: "Halyard Inc.",
     period: "2016 — 2019",
     summary:

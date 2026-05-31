@@ -24,15 +24,15 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://naufal.dev"),
   title: {
-    default: "Naufal — Senior Frontend Engineer",
+    default: "Naufal — Senior Frontend Developer",
     template: "%s — Naufal",
   },
   description:
-    "Notes on frontend architecture, design systems, and the craft of building thoughtful interfaces. Written by Naufal, a senior frontend engineer.",
+    "Notes on frontend architecture, design systems, and the craft of building thoughtful interfaces. Written by Naufal, a senior frontend Developer.",
   authors: [{ name: "Naufal" }],
   creator: "Naufal",
   openGraph: {
-    title: "Naufal — Senior Frontend Engineer",
+    title: "Naufal — Senior Frontend Developer",
     description:
       "Notes on frontend architecture, design systems, and the craft of building thoughtful interfaces.",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naufal — Senior Frontend Engineer",
+    title: "Naufal — Senior Frontend Developer",
     description:
       "Notes on frontend architecture, design systems, and the craft of building thoughtful interfaces.",
   },

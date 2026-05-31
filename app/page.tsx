@@ -60,7 +60,7 @@ export default function Home() {
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
                 I&apos;m{" "}
                 <span className="text-foreground">Naufal</span>, a senior
-                frontend engineer with a decade of shipping interfaces that
+                frontend Developer with a decade of shipping interfaces that
                 hold up under real load. This is where I think out loud about
                 the craft.
               </p>

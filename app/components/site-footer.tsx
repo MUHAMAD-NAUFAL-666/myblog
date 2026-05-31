@@ -18,7 +18,7 @@ export function SiteFooter() {
               <span>Naufal</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Senior frontend engineer writing about the craft. Essays, design
+              Senior frontend Developer writing about the craft. Essays, design
               system notes, and the slow lessons of a decade.
             </p>
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle">
@@ -43,24 +43,24 @@ export function SiteFooter() {
               Elsewhere
             </p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <FooterLink href="https://github.com" external>
+              <FooterLink href="https://github.com/MUHAMAD-NAUFAL-666" external>
                 GitHub
               </FooterLink>
               <FooterLink href="https://twitter.com" external>
                 Twitter / X
               </FooterLink>
-              <FooterLink href="https://linkedin.com" external>
+              <FooterLink href="https://www.linkedin.com/in/muhamad-naufal-678474316/" external>
                 LinkedIn
               </FooterLink>
-              <FooterLink href="mailto:hello@naufal.dev">Email</FooterLink>
+              <FooterLink href="mailto:@naufal.mhmd1106@gmail.com">Email</FooterLink>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 border-t border-border py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; {year} Naufal. Crafted with care.</span>
+          <span>&copy; {year} Naufal.</span>
           <span className="font-mono uppercase tracking-[0.16em] text-subtle">
-            Jakarta · Anywhere
+            Karawang · Anywhere
           </span>
         </div>
       </Container>

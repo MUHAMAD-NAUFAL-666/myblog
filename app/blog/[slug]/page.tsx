@@ -107,7 +107,7 @@ export default async function PostPage(props: {
           <div>
             <p className="font-medium text-foreground">Naufal</p>
             <p className="text-sm text-muted">
-              Senior frontend engineer. Writing about the craft.
+              Senior frontend Developer. Writing about the craft.
             </p>
           </div>
         </div>

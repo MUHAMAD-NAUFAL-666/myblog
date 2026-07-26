@@ -1,8 +1,11 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Container } from "@/app/components/container";
+import { Link } from "@/i18n/navigation";
 
 export function SiteFooter() {
+  const t = useTranslations("Footer");
   const year = new Date().getFullYear();
+
   return (
     <footer className="mt-24 border-t border-border bg-surface-muted/40">
       <Container size="wide">
@@ -18,49 +21,56 @@ export function SiteFooter() {
               <span>Naufal</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Senior frontend Developer writing about the craft. Essays, design
-              system notes, and the slow lessons of a decade.
+              {t("tagline")}
             </p>
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle">
-              Built with Next.js 16 · Tailwind v4
+              {t("builtWith")}
             </p>
           </div>
 
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-subtle">
-              Explore
+              {t("explore")}
             </p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <FooterLink href="/blog">Writing</FooterLink>
-              <FooterLink href="/docs">Docs</FooterLink>
-              <FooterLink href="/docs/sql">SQL course</FooterLink>
-              <FooterLink href="/about">About</FooterLink>
+              <FooterInternalLink href="/blog">
+                {t("writing")}
+              </FooterInternalLink>
+              <FooterInternalLink href="/docs">{t("docs")}</FooterInternalLink>
+              <FooterInternalLink href="/docs/sql">
+                {t("sqlCourse")}
+              </FooterInternalLink>
+              <FooterInternalLink href="/about">
+                {t("about")}
+              </FooterInternalLink>
             </ul>
           </div>
 
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-subtle">
-              Elsewhere
+              {t("elsewhere")}
             </p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <FooterLink href="https://github.com/MUHAMAD-NAUFAL-666" external>
-                GitHub
-              </FooterLink>
-              <FooterLink href="https://twitter.com" external>
-                Twitter / X
-              </FooterLink>
-              <FooterLink href="https://www.linkedin.com/in/muhamad-naufal-678474316/" external>
-                LinkedIn
-              </FooterLink>
-              <FooterLink href="mailto:@naufal.mhmd1106@gmail.com">Email</FooterLink>
+              <FooterExternalLink href="https://github.com/MUHAMAD-NAUFAL-666">
+                {t("github")}
+              </FooterExternalLink>
+              <FooterExternalLink href="https://twitter.com">
+                {t("twitter")}
+              </FooterExternalLink>
+              <FooterExternalLink href="https://www.linkedin.com/in/muhamad-naufal-678474316/">
+                {t("linkedin")}
+              </FooterExternalLink>
+              <FooterExternalLink href="mailto:@naufal.mhmd1106@gmail.com">
+                {t("email")}
+              </FooterExternalLink>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 border-t border-border py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; {year} Naufal.</span>
+          <span>{t("copyright", { year })}</span>
           <span className="font-mono uppercase tracking-[0.16em] text-subtle">
-            Karawang · Anywhere
+            {t("location")}
           </span>
         </div>
       </Container>
@@ -68,29 +78,13 @@ export function SiteFooter() {
   );
 }
 
-function FooterLink({
+function FooterInternalLink({
   href,
   children,
-  external = false,
 }: {
   href: string;
   children: React.ReactNode;
-  external?: boolean;
 }) {
-  if (external) {
-    return (
-      <li>
-        <a
-          href={href}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="text-muted transition-colors hover:text-foreground"
-        >
-          {children}
-        </a>
-      </li>
-    );
-  }
   return (
     <li>
       <Link
@@ -99,6 +93,27 @@ function FooterLink({
       >
         {children}
       </Link>
+    </li>
+  );
+}
+
+function FooterExternalLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <li>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="text-muted transition-colors hover:text-foreground"
+      >
+        {children}
+      </a>
     </li>
   );
 }

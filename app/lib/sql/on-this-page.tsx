@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/app/lib/cn";
 import type { LessonHeading } from "@/app/lib/sql/types";
 
@@ -19,6 +20,7 @@ export function OnThisPage({
   const [active, setActive] = useState<string | null>(
     headings[0]?.id ?? null,
   );
+  const t = useTranslations("Sql");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -62,7 +64,7 @@ export function OnThisPage({
   return (
     <nav className={cn("text-sm", className)} aria-label="On this page">
       <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-subtle">
-        On this page
+        {t("onThisPage")}
       </p>
       <ul className="mt-3 space-y-1 border-l border-border">
         {headings.map((h) => {

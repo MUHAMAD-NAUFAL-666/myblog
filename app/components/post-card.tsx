@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { PostMeta } from "@/app/lib/posts";
 import { formatDate } from "@/app/lib/format";
 
@@ -11,6 +12,8 @@ export function PostCard({
   post: PostMeta;
   variant?: Variant;
 }) {
+  const t = useTranslations("Blog");
+
   if (variant === "feature") {
     return (
       <Link
@@ -24,11 +27,11 @@ export function PostCard({
         <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.16em] text-subtle">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2 py-0.5 font-medium text-accent">
             <span className="size-1.5 rounded-full bg-accent" />
-            Featured
+            {t("featured")}
           </span>
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span className="text-border-strong">·</span>
-          <span>{post.readingTime} min</span>
+          <span>{t("min", { count: post.readingTime })}</span>
         </div>
 
         <h2 className="mt-6 font-serif text-3xl leading-[1.05] tracking-tight text-foreground sm:text-4xl md:text-5xl">
@@ -53,7 +56,7 @@ export function PostCard({
             ))}
           </div>
           <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-foreground">
-            Read essay
+            {t("readEssay")}
             <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
           </span>
         </div>
@@ -70,9 +73,9 @@ export function PostCard({
         <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-subtle">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2 py-0.5 font-medium text-accent">
             <span className="size-1 rounded-full bg-accent" />
-            Featured
+            {t("featured")}
           </span>
-          <span>{post.readingTime} min</span>
+          <span>{t("min", { count: post.readingTime })}</span>
         </div>
 
         <h3 className="mt-5 font-serif text-2xl leading-[1.1] tracking-tight text-foreground">

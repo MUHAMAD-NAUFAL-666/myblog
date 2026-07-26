@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { chapters } from "@/app/lib/sql/lessons";
 import { cn } from "@/app/lib/cn";
 
 export function SqlSidebar({ className }: { className?: string }) {
+  const t = useTranslations("Sql");
   const pathname = usePathname();
   const isOverview = pathname === "/docs/sql";
 
@@ -23,7 +24,7 @@ export function SqlSidebar({ className }: { className?: string }) {
             : "text-muted hover:bg-surface-muted hover:text-foreground",
         )}
       >
-        Course overview
+        {t("courseOverview")}
       </Link>
 
       <div className="mt-2 space-y-6">
@@ -31,7 +32,7 @@ export function SqlSidebar({ className }: { className?: string }) {
           <section key={ch.slug}>
             <header className="px-3 pb-2 pt-1">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-subtle">
-                Chapter {ch.number}
+                {t("chapter", { number: ch.number })}
               </p>
               <p className="mt-0.5 text-[13px] font-medium text-foreground">
                 {ch.title}

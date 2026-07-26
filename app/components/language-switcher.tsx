@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect, useTransition } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/app/lib/cn";
 
@@ -23,7 +22,6 @@ export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
 
   const [open, setOpen] = useState(false);
@@ -63,8 +61,7 @@ export function LanguageSwitcher() {
     // Preserve the unlocalized pathname (next-intl strips the locale
     // prefix from `usePathname`) plus any query parameters, then let
     // the next-intl router add the new locale prefix.
-    const query = searchParams?.toString();
-    const href = query ? `${pathname}?${query}` : pathname;
+    const href = `${pathname}${window.location.search}`;
     startTransition(() => {
       router.replace(href, { locale: next });
     });
